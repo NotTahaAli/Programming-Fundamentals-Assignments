@@ -2,6 +2,7 @@
 
 !*.cpp
 !*/
+!Assignment 2/*.exe
 !.gitignore
 !README.md
 
