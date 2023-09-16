@@ -6,6 +6,10 @@ int main() {
     int y = 0;
     cout << "Input X and Y (respectively)";
     cin >> x >> y;
-    cout << ((x % y == 0) ? "True" : "False");
+    if (x % y == 0) {
+        cout << "True";
+    } else {
+        cout << "False";
+    }
     return 0;
 }

@@ -9,6 +9,7 @@ int main()
     cout << "Enter Day, Month and Year (as Integers): ";
     cin >> day >> month >> year;
     day++;
+    int maxdays = 30;
     if (month < 1 || day < 1 || year < 0 || month > 12)
     {
         cout << "Invalid Date";
@@ -16,33 +17,22 @@ int main()
     }
     if (month == 2)
     {
-        if (day > ((year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28))
+        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0))
         {
-            if (day - ((year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28) > 1)
-            {
-                cout << "Invalid Date";
-                return 0;
-            }
-            month++;
-            day = 1;
+            maxdays = 29;
+        }
+        else
+        {
+            maxdays = 28;
         }
     }
     else if ((month <= 7 && month % 2 == 1) || (month > 7 && month % 2 == 0))
     {
-        if (day > 31)
-        {
-            if (day - 31 > 1)
-            {
-                cout << "Invalid Date";
-                return 0;
-            }
-            month++;
-            day = 1;
-        }
+        maxdays = 31;
     }
-    else if (day > 30)
+    if (day > maxdays)
     {
-        if (day - 30 > 1)
+        if (day - maxdays > 1)
         {
             cout << "Invalid Date";
             return 0;
