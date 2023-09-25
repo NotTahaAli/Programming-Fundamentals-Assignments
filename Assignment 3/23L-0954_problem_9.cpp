@@ -14,10 +14,9 @@ int main()
     char c3 = ' ';
     char victory = '\0';
     char turn = 'O';
-    char turnCount = 0;
     char row;
     char column;
-    do
+    for (int turnCount = 0;victory != 'X' && victory != 'O' && turnCount < 9;)
     {
         cout << "  1   2   3" << endl;
         cout << "a " << a1 << " | " << a2 << " | " << a3 << endl;
@@ -215,7 +214,7 @@ int main()
             turn = 'X';
         }
         turnCount++;
-    } while (victory != 'X' && victory != 'O' && turnCount < 9);
+    };
     cout << "  1   2   3" << endl;
     cout << "a " << a1 << " | " << a2 << " | " << a3 << endl;
     cout << "  ---------" << endl;
