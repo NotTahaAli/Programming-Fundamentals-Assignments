@@ -12,6 +12,7 @@ int main() {
     int aboveAverage = 0;
     int belowAverage = 0;
     int averageNumbers = 0;
+    cout << "Average is " << average << endl;
     if (n1 > average) aboveAverage++; else if (n1 < average) belowAverage++; else averageNumbers++;
     if (n2 > average) aboveAverage++; else if (n2 < average) belowAverage++; else averageNumbers++;
     if (n3 > average) aboveAverage++; else if (n3 < average) belowAverage++; else averageNumbers++;
