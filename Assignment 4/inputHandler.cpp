@@ -21,6 +21,15 @@ float inputFloat(char message[] = "Enter Floating Number: ")
     return num;
 }
 
+int inputInt(char message[] = "Enter Integer: ")
+{
+    int num;
+    cout << message;
+    fflush(stdin);
+    cin >> num;
+    return num;
+}
+
 int inputUnsignedInt(char message[] = "Enter Positive Integer: ")
 {
     int num;

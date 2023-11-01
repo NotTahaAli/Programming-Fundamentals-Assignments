@@ -99,6 +99,7 @@ void copyMenu()
 
 void editMenu()
 {
+    int pos;
     while (true)
     {
         cout << "Which Type of Task do you want to perform?" << endl
@@ -112,9 +113,9 @@ void editMenu()
         {
             cout << "Before:" << endl;
             printStrings();
-            strEdit(stringA, inputUnsignedInt("Enter Position: "), inputChar("Enter Character to Change With: "));
-            cout << endl
-                 << "After" << endl;
+            pos = inputUnsignedInt("Enter Position: ");
+            strEdit(stringA, pos, inputChar("Enter Character to Change With: "));
+            cout << "After" << endl;
             printStrings();
             break;
         }
@@ -122,7 +123,8 @@ void editMenu()
         {
             cout << "Before:" << endl;
             printStrings();
-            strEdit(stringB, inputUnsignedInt("Enter Position: "), inputChar("Enter Character to Change With: "));
+            pos = inputUnsignedInt("Enter Position: ");
+            strEdit(stringB, pos, inputChar("Enter Character to Change With: "));
             cout << "After" << endl;
             printStrings();
             break;
@@ -139,12 +141,14 @@ void stringMenu()
     inputStrings();
     while (true)
     {
-        cout << "Which Type of Task do you want to perform?" << endl
+        cout << endl
+             << "Which Type of Task do you want to perform?" << endl
              << "A. Input Strings Again" << endl
              << "B. Get String Lengths" << endl
              << "C. String Concatenation" << endl
              << "D. String Copy" << endl
              << "E. String Edit" << endl
+             << "F. Output Strings" << endl
              << "X. Exit" << endl;
         option = inputChar("Choose Option: ");
         if (option == 'X' || option == 'x')
@@ -162,6 +166,8 @@ void stringMenu()
             copyMenu();
         else if (option == 'E' || option == 'e')
             editMenu();
+        else if (option == 'F' || option == 'f')
+            printStrings();
         else
             cout << "Invaild Option, Try again." << endl;
     }

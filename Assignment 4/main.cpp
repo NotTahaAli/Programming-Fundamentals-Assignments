@@ -1,19 +1,18 @@
 #include <iostream>
-#include "stringHandler.h"
 #include "inputHandler.h"
 #include "stringMenu.h"
+#include "calculatorMenu.h"
+#include "sortingMenu.h"
+#include "searchMenu.h"
 using namespace std;
-
-void calculatorMenu()
-{
-}
 
 int main()
 {
     char option = '\0';
     while (true)
     {
-        cout << "Which Type of Task do you want to perform?" << endl
+        cout << endl
+             << "Which Type of Task do you want to perform?" << endl
              << "A. String Manipulation" << endl
              << "B. Calculator" << endl
              << "C. Sorting" << endl
@@ -26,7 +25,12 @@ int main()
             stringMenu();
         else if (option == 'B' || option == 'b')
             calculatorMenu();
-        else {
+        else if (option == 'C' || option == 'c')
+            sortingMenu();
+        else if (option == 'D' || option == 'd')
+            searchMenu();
+        else
+        {
             cout << "Invalid Option, Try again." << endl;
         }
     }
