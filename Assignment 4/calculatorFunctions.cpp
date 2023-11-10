@@ -20,9 +20,6 @@ int modulo(int num1, int num2) {
     return num1 % num2;
 }
 
-#include <iostream>
-using namespace std;
-
 double power(double A, int n) {
     double val = 1;
     if (n < 0) {
