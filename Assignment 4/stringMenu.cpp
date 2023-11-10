@@ -99,7 +99,7 @@ void copyMenu()
 
 void editMenu()
 {
-    int pos;
+    char find;
     while (true)
     {
         cout << "Which Type of Task do you want to perform?" << endl
@@ -113,8 +113,8 @@ void editMenu()
         {
             cout << "Before:" << endl;
             printStrings();
-            pos = inputUnsignedInt("Enter Position: ");
-            strEdit(stringA, pos, inputChar("Enter Character to Change With: "));
+            find = inputChar("Enter Character to Replace: ");
+            strReplace(stringA, find, inputChar("Enter Character to Change With: "));
             cout << "After" << endl;
             printStrings();
             break;
@@ -123,8 +123,8 @@ void editMenu()
         {
             cout << "Before:" << endl;
             printStrings();
-            pos = inputUnsignedInt("Enter Position: ");
-            strEdit(stringB, pos, inputChar("Enter Character to Change With: "));
+            find = inputUnsignedInt("Enter Character to Replace: ");
+            strReplace(stringB, find, inputChar("Enter Character to Change With: "));
             cout << "After" << endl;
             printStrings();
             break;

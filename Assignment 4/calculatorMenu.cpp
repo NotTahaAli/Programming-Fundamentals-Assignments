@@ -1,11 +1,12 @@
 #include <iostream>
+#include "calculatorFunctions.h"
 #include "inputHandler.h"
 using namespace std;
 
-void inputNumbers(float &num1, float &num2)
+void inputNumbers(double &num1, double &num2)
 {
-    num1 = inputFloat("Enter Number 1 (Float): ");
-    num2 = inputFloat("Enter Number 2 (Float): ");
+    num1 = inputDouble("Enter Number 1 (Double): ");
+    num2 = inputDouble("Enter Number 2 (Double): ");
 }
 
 void inputNumbers(int &num1, int &num2)
@@ -14,43 +15,43 @@ void inputNumbers(int &num1, int &num2)
     num2 = inputInt("Enter Number 2 (Integer): ");
 }
 
-void inputNumbers(float &num1, int &num2)
+void inputNumbers(double &num1, int &num2)
 {
-    num1 = inputFloat("Enter Number 1 (Float): ");
+    num1 = inputDouble("Enter Number 1 (Double): ");
     num2 = inputInt("Enter Number 2 (Integer): ");
 }
 
 void addMenu()
 {
-    float num1, num2;
+    double num1, num2;
     inputNumbers(num1, num2);
-    cout << num1 << "+" << num2 << " = " << num1 + num2 << endl;
+    cout << num1 << "+" << num2 << " = " << add(num1,num2) << endl;
 }
 
 void subtractMenu()
 {
-    float num1, num2;
+    double num1, num2;
     inputNumbers(num1, num2);
-    cout << num1 << "-" << num2 << " = " << num1 - num2 << endl;
+    cout << num1 << "-" << num2 << " = " << subtract(num1,num2) << endl;
 }
 
 void multiplyMenu()
 {
-    float num1, num2;
+    double num1, num2;
     inputNumbers(num1, num2);
-    cout << num1 << "*" << num2 << " = " << num1 * num2 << endl;
+    cout << num1 << "*" << num2 << " = " << multiply(num1,num2) << endl;
 }
 
 void divideMenu()
 {
-    float num1, num2;
+    double num1, num2;
     inputNumbers(num1, num2);
     if (num2 == 0)
     {
         cout << "Can not divide with 0." << endl;
         return;
     }
-    cout << num1 << "/" << num2 << " = " << num1 / num2 << endl;
+    cout << num1 << "/" << num2 << " = " << divide(num1,num2) << endl;
 }
 
 void modulusMenu()
@@ -62,36 +63,20 @@ void modulusMenu()
         cout << "Can not modulus with 0." << endl;
         return;
     }
-    cout << num1 << "%" << num2 << " = " << num1 % num2 << endl;
+    cout << num1 << "%" << num2 << " = " << modulo(num1,num2) << endl;
 }
 
 void powerMenu()
 {
-    float num1;
-    int num2;
-    double ans = 1;
-    bool negative = false;
+    double num1;
+    double num2;
+    double ans;
     inputNumbers(num1, num2);
-    if (num1 == 0 && num2 <= 0)
-    {
-        cout << num1 << " to the power of " << num2 << " = undefined" << endl;
-        return;
+    if (power(num1, num2, ans)) {
+        cout << num1 << " to the power of " << num2 << " = " << ans << endl;
+    } else {
+        cout << num1 << " to the power of " << num2 << " = Undefined." << endl;
     }
-    else
-    {
-        if (num2 < 0) {
-            num2 *= -1;
-            negative = true;
-        }
-        for (int i = 0; i < num2; i++)
-        {
-            ans *= num1;
-        }
-        if (negative) {
-            ans = 1/ans;
-        }
-    }
-    cout << num1 << " to the power of " << num2 << " = " << ans << endl;
 }
 
 void calculatorMenu()

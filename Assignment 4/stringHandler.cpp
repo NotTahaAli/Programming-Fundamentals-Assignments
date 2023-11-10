@@ -25,7 +25,7 @@ void strCopy(char src[], char dest[]) {
     dest[i] = '\0';
 }
 
-void strEdit(char str[], int pos, char character) {
+void strEditPos(char str[], int pos, char character) {
     if (pos >= MAX_STRING_SIZE - 1) {
         cout << "Position given " << pos << " But Maximum allowed Position is " << MAX_STRING_SIZE - 2 << ". Not editing at this position.";
         return;
@@ -33,6 +33,10 @@ void strEdit(char str[], int pos, char character) {
     str[pos] = character;
 }
 
-void strEditArr(char str[], int pos[], char characters[], int size) {
-    for (int i = 0; i < size; i++) strEdit(str, pos[i], characters[i]);
+void strEditPosArr(char str[], int pos[], char characters[], int size) {
+    for (int i = 0; i < size; i++) strEditPos(str, pos[i], characters[i]);
+}
+
+void strReplace(char str[], char find, char replace) {
+    for (int i=0; str[i] != '\0';i++) if (str[i] == find) str[i] = replace;
 }

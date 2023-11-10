@@ -17,7 +17,24 @@ float inputFloat(char message[] = "Enter Floating Number: ")
     float num;
     cout << message;
     fflush(stdin);
-    cin >> num;
+    while (!(cin >> num)) {
+        cout << "Invalid Input, Try again. " << message;
+        cin.clear();
+        fflush(stdin);
+    }
+    return num;
+}
+
+double inputDouble(char message[] = "Enter Double Number: ")
+{
+    double num;
+    cout << message;
+    fflush(stdin);
+    while (!(cin >> num)) {
+        cout << "Invalid Input, Try again. " << message;
+        cin.clear();
+        fflush(stdin);
+    }
     return num;
 }
 
@@ -26,7 +43,11 @@ int inputInt(char message[] = "Enter Integer: ")
     int num;
     cout << message;
     fflush(stdin);
-    cin >> num;
+    while (!(cin >> num)) {
+        cout << "Invalid Input, Try again. " << message;
+        cin.clear();
+        fflush(stdin);
+    }
     return num;
 }
 
@@ -37,7 +58,11 @@ int inputUnsignedInt(char message[] = "Enter Positive Integer: ")
     {
         cout << message;
         fflush(stdin);
-        cin >> num;
+        while (!(cin >> num)) {
+            cout << "Invalid Input, Try again. " << message;
+            cin.clear();
+            fflush(stdin);
+        }
         if (num >= 0) break;
         cout << "Number should be greater than or equal to 0." << endl;
     }

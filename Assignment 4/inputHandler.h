@@ -1,5 +1,6 @@
 void inputFloatArray(float arr[], int size);
 float inputFloat(char message[] = "Enter Floating Number: ");
+double inputDouble(char message[] = "Enter Double Number: ");
 int inputInt(char message[] = "Enter Integer: ");
 int inputUnsignedInt(char message[] = "Enter Positive Integer: ");
 char inputChar(char message[] = "Enter Character: ");
