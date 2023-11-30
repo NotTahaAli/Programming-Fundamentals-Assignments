@@ -2,16 +2,6 @@
 #include <stdio.h>
 using namespace std;
 
-void inputFloatArray(float arr[], int size)
-{
-    for (int i = 0; i < size; i++)
-    {
-        cout << "Enter Floating Number at Position " << i << ": ";
-        fflush(stdin);
-        cin >> arr[i];
-    }
-}
-
 float inputFloat(char message[] = "Enter Floating Number: ")
 {
     float num;
@@ -23,6 +13,14 @@ float inputFloat(char message[] = "Enter Floating Number: ")
         fflush(stdin);
     }
     return num;
+}
+
+void inputFloatArray(float arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = inputFloat("Enter Floating Number: ");
+    }
 }
 
 double inputDouble(char message[] = "Enter Double Number: ")

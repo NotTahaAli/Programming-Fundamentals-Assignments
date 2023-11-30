@@ -7,7 +7,7 @@ int main() {
     for (int i = 1; i <= 7; i++)
     {
         fact *= i;
-        ans += 1.0/(fact);
+        ans += (float) i/(fact);
     }
     cout << ans;
     return 0;
